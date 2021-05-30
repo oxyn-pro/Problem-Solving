@@ -2,7 +2,10 @@
 # as you may know the merge sort is one of the fastest and efficient sorting algorithms,
 # that has O(n log n) time complexity, space complexity O(n log n). 
 # In this, Merge-Sort Inversion Counter, the Complexity Analysis is the same as the usual merge sort which means:
-# O(n log n) Time Complexity, Space complexity - O(n log n). 
+# O(n log n) Time Complexity, Space complexity - O(n log n).
+
+# The problem description is: https://www.hackerrank.com/challenges/ctci-merge-sort/problem
+# All test cases passed
 
 def invCount(arr):            
     total_inv = 0     # Var to count the inversions
