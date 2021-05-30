@@ -4,15 +4,15 @@
 # In this, Merge-Sort Inversion Counter, the Complexity Analysis is the same as the usual merge sort which means:
 # O(n log n) Time Complexity, Space complexity - O(n log n). 
 
-def countInversions(arr):            
+def invCount(arr):            
     total_inv = 0     # Var to count the inversions
     if len(arr) <= 1:     # Creating a Base-case in order to check the list length (the eventually stop the recursive call)
         return arr, 0         
     else:
         mid = int(len(arr) / 2)   # Getting the middle val in order to recursively loop
 
-        left, left_inv = countInversions(arr[:mid])      # Assigning both vals to variables
-        right, right_inv = countInversions(arr[mid:])
+        left, left_inv = invCount(arr[:mid])      # Assigning both vals to variables
+        right, right_inv = invCount(arr[mid:])
         
         left_idx = 0
         right_idx = 0
@@ -38,4 +38,4 @@ def countInversions(arr):
 # Check statement: 
 
 # if __name__ == "__main__":                         
-#     print(countInversions(arr))
+#     print(invCount(arr))
