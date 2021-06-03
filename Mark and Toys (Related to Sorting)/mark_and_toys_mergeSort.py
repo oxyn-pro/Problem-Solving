@@ -7,8 +7,8 @@
 # The problem description is: https://www.hackerrank.com/challenges/mark-and-toys/problem
 # All test cases passed
 
-
-def merge_sort(lst):
+# Merge sort algorithm, in order to sort
+def merge_sort(lst): 
     if len(lst)<= 1:
         return lst
     else:
@@ -33,12 +33,12 @@ def merge_sort(lst):
 
 def maximumToys(prices, k):
     # Write your code here
-    la = merge_sort(prices)
+    la = merge_sort(prices)  # calling merge sort and storing the list into "la" var
 
     count = 0
     total = 0
     for i in la:
-        if i <= k:
+        if i <= k:           # Iterating over the sequence of vals inside of the list, and find the less values than k
             count += 1
             k-= i
         else:
