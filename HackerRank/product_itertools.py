@@ -1,6 +1,6 @@
 # In this problem, the programmer is supposed to solve the problem using product function of the itertools library
 # The difficulty of the problem is EASY
-# Link to the problem: https://www.hackerrank.com/challenges/itertools-permutations/problem
+# Link to the problem: https://www.hackerrank.com/challenges/itertools-product/problem
 # All test cases passed
 
 from itertools import product
