@@ -1,4 +1,5 @@
 # The link for a problem: https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+# The difficulty of the problem is EASY
 # All test cases passed
 
 games = int(input())
