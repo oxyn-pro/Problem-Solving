@@ -1,6 +1,5 @@
-operations = ["5", "-2", "4", "C", "D", "9", "+", "+"]
-
-
+# TC: O(n)
+# SC: O(n)
 def cal_points(operations):
     st = []
     for op in operations:
@@ -16,4 +15,5 @@ def cal_points(operations):
     return sum(st)
 
 
+operations = ["5", "-2", "4", "C", "D", "9", "+", "+"]
 cal_points(operations)
