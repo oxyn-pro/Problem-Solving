@@ -1,7 +1,5 @@
-nums = [1, 2, 3, 1, 2, 3]
-k = 2
-
-
+# TC: O(n)
+# SC: O(n)
 def contains_nearby_duplicate(nums, k):
     dictt = {}
     for i in range(len(nums)):
@@ -12,4 +10,6 @@ def contains_nearby_duplicate(nums, k):
     return False
 
 
+nums = [1, 2, 3, 1, 2, 3]
+k = 2
 contains_nearby_duplicate(nums, k)
