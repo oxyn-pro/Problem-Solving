@@ -1,7 +1,5 @@
-nums = [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0]
-k = 2
-
-
+# TC: O(n)
+# SC: O(1)
 def max_cons(nums, k):
     zeros = left = longest_window = 0
     for right in range(len(nums)):
@@ -17,4 +15,6 @@ def max_cons(nums, k):
     return longest_window
 
 
+nums = [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0]
+k = 2
 max_cons(nums, k)
