@@ -1,6 +1,5 @@
-nums = [0, 1, 1, 1, 0, 1, 1, 0, 1]
-
-
+# TC: O(n)
+# SC: O(1)
 def longest_sub(nums):
     zeros = left = longest_window = 0
     for right in range(len(nums)):
@@ -16,4 +15,5 @@ def longest_sub(nums):
     return longest_window
 
 
+nums = [0, 1, 1, 1, 0, 1, 1, 0, 1]
 longest_sub(nums)
