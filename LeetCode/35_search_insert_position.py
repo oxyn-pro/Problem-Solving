@@ -1,7 +1,5 @@
-nums = [1, 3, 5, 7]
-target = 6
-
-
+# TC: O(log n)
+# SC: O(1)
 def search_insert(nums, target):
     h, l = len(nums) - 1, 0
 
@@ -20,4 +18,6 @@ def search_insert(nums, target):
     return l
 
 
+nums = [1, 3, 5, 7]
+target = 6
 search_insert(nums, target)
