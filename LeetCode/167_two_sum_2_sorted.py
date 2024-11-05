@@ -5,9 +5,10 @@ def two_sum(numbers, target):
     right = len(numbers)
 
     while left < right:
-        if numbers[left - 1] + numbers[right - 1] > target:
+        sm = numbers[left - 1] + numbers[right - 1]
+        if sm > target:
             right -= 1
-        elif numbers[left - 1] + numbers[right - 1] < target:
+        elif sm < target:
             left += 1
         else:
             return [left, right]
