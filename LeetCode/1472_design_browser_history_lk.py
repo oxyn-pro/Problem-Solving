@@ -61,7 +61,7 @@ lt.back(7)
 current_node = lt.current_node
 
 
-# Just to demonstrate what will look like our linked list at the end.
+# Just to demonstrate what our linked list will look like at the end.
 def retrieve_head(current_node):
 
     if not current_node.prev:
