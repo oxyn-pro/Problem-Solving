@@ -73,7 +73,7 @@ lt.back(7)
 current_node = lt.left
 
 
-# Just to demonstrate what will look like our linked list at the end.
+# Just to demonstrate what our linked list will look like at the end.
 def traverse(current_node):
     while current_node:
         print(current_node.val)
