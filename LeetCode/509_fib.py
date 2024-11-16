@@ -1,7 +1,7 @@
 # TC: O(2^n) - In the worst scenario, each branch will have 2 branches
 # SC: O(n) - Call stack is linear
 def fib_rec(n):
-    """Unoptimized Recursive solution with 2 branches"""
+    """Top-Down Dynamic Programming - No Memoization"""
     if n <= 1:
         return n
     return fib_rec(n - 1) + fib_rec(n - 2)
