@@ -12,8 +12,8 @@ fib_rec(5)
 
 # TC: O(n)
 # SC: O(n)
-def fib_dp_mem(n):
-    """Top to Bottom Dynamic Programming - Memoization"""
+def fib_td_mem(n):
+    """Top-Down Dynamic Programming - Memoization"""
     memo = {0: 0, 1: 1}
 
     def f(x):
@@ -26,13 +26,13 @@ def fib_dp_mem(n):
     return f(n)
 
 
-fib_dp_mem(5)
+fib_td_mem(5)
 
 
 # TC: O(n)
 # SC: O(n)
-def fib_dp_tab(n):
-    """Bottom Up Dynamic Programming - Tabulation"""
+def fib_bu_tab(n):
+    """Bottom-Up Dynamic Programming - Tabulation"""
     tab = n * [0]
 
     for i in range(len(tab)):
@@ -42,4 +42,21 @@ def fib_dp_tab(n):
             tab[i] = tab[i - 1] + tab[i - 2]
 
 
-fib_dp_tab(5)
+fib_bu_tab(5)
+
+
+# TC: O(n)
+# SC: O(1)
+def fib_bu_var(n):
+    """Bottom-Up Dynamic Programming - Variable"""
+    if n <= 1:
+        return n
+
+    prev, cur = 0, 1
+    for _ in range(2, n + 1):
+        prev, cur = cur, prev + cur
+
+    return cur
+
+
+fib_bu_var(5)
