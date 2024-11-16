@@ -33,13 +33,15 @@ fib_td_mem(5)
 # SC: O(n)
 def fib_bu_tab(n):
     """Bottom-Up Dynamic Programming - Tabulation"""
-    tab = n * [0]
+    tab = (n + 1) * [0]
 
     for i in range(len(tab)):
         if i <= 1:
             tab[i] = i
         else:
             tab[i] = tab[i - 1] + tab[i - 2]
+
+    return tab[i]
 
 
 fib_bu_tab(5)
