@@ -1,13 +1,13 @@
 # TC: O(2^n) - In the worst scenario, each branch will have 2 branches
 # SC: O(n) - Call stack is linear
-def fib_rec(n):
+def fib_td(n):
     """Top-Down Dynamic Programming - No Memoization"""
     if n <= 1:
         return n
-    return fib_rec(n - 1) + fib_rec(n - 2)
+    return fib_td(n - 1) + fib_td(n - 2)
 
 
-fib_rec(5)
+fib_td(5)
 
 
 # TC: O(n)
