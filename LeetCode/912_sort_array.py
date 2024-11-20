@@ -58,7 +58,7 @@ insertion_srt(nums)
 # TC: O(n log n)
 # SC: O(n)
 def merge_srt(nums, s, e):
-    """Merge Sort - Two Pointer"""
+    """Merge Sort - Two Pointer (Stable)"""
     if (e - s) + 1 <= 1:
         return nums
 
@@ -102,3 +102,39 @@ def _merge(nums, s, m, e):
 
 
 merge_srt(nums, s=0, e=len(nums) - 1)
+
+
+# TC: O(n^2) But on average it is O(n log n) (Bit Theta)
+# SC: O(1)
+def quick_srt(nums, s, e):
+    """Quick Sort - Two Pointer (Unstable)"""
+    if (e - s) + 1 <= 1:
+        return nums
+
+    pivot = nums[e]
+    left = partition(nums, s, e, pivot)
+
+    quick_srt(nums, s, left - 1)
+    quick_srt(nums, left + 1, e)
+
+    return nums
+
+
+def partition(nums, s, e, pivot):
+    """Move elements smaller than the pivot to the left and larger to the right"""
+    left = s
+
+    for i in range(s, e):
+        if nums[i] <= pivot:
+            temp = nums[i]
+            nums[i] = nums[left]
+            nums[left] = temp
+            left += 1
+
+    nums[e] = nums[left]
+    nums[left] = pivot
+
+    return left
+
+
+quick_srt(nums, s=0, e=len(nums) - 1)
