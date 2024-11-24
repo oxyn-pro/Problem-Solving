@@ -105,7 +105,7 @@ merge_srt(nums, s=0, e=len(nums) - 1)
 
 
 # TC: O(n^2) But on average it is O(n log n) (Bit Theta)
-# SC: O(1)
+# SC: O(n) But on average it is O(log n) because of the call stack
 def quick_srt(nums, s, e):
     """Quick Sort - Two Pointer (Unstable)"""
     if (e - s) + 1 <= 1:
@@ -138,3 +138,23 @@ def partition(nums, s, e, pivot):
 
 
 quick_srt(nums, s=0, e=len(nums) - 1)
+
+
+# TC: O(n) But there are many restrictions
+# SC: O(1)
+def bucket_srt(nums):
+    """Bucket Sort - Unoptimized"""
+    colors = [0, 0, 0]
+
+    for i in range(len(nums)):
+        colors[nums[i]] += 1
+
+    idx = 0
+    for i in range(len(colors)):
+        for _ in range(colors[i]):
+            nums[idx] = i
+            idx += 1
+
+
+nums = [2, 0, 2, 1, 1, 0]
+bucket_srt(nums)
