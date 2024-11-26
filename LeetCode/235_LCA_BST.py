@@ -35,6 +35,8 @@ node6.right = node8
 #    3  5
 
 
+# TC: O(n) - If it is Unbalanced, but on average it is Balanced and that's why it is O(log n)
+# SC: O(n) - If it is Unbalanced, but on average the call stack of a Balanced BST is O(log n)
 def LCA_BST_rec(root, p, q):
     if not root:
         return
@@ -50,6 +52,8 @@ def LCA_BST_rec(root, p, q):
 print(LCA_BST_rec(root, node1, node3).val)
 
 
+# TC: O(n) - If it is Unbalanced, but on average it is Balanced and that's why it is O(log n)
+# SC: O(1)
 def LCA_BST_loop(root, p, q):
     while root:
         if p.val > root.val and q.val > root.val:
