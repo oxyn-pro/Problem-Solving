@@ -31,15 +31,16 @@ node4.right = node6
 
 # TC: O(n)
 # SC: O(n)
-def invert_tree(root):
+def invert_tree_rec(root):
+    """Postorder Traverse"""
     if not root:
         return
 
-    invert_tree(root.left)
-    invert_tree(root.right)
+    invert_tree_rec(root.left)
+    invert_tree_rec(root.right)
     root.left, root.right = root.right, root.left
 
     return root
 
 
-invert_tree(root)
+invert_tree_rec(root)
