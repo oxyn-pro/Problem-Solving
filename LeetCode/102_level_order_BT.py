@@ -32,6 +32,8 @@ node4.right = node6
 #   1  3  6  9
 
 
+# TC: O(n)
+# SC: O(n)
 def level_order_loop(root):
     queue = deque()
     res = []
