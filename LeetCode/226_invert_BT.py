@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -31,16 +34,39 @@ node4.right = node6
 
 # TC: O(n)
 # SC: O(n)
-def invert_tree_rec(root):
-    """Postorder Traverse"""
+def invert_tree_DFS_rec(root):
+    """Depth First Search - Postorder Traverse"""
     if not root:
         return
 
-    invert_tree_rec(root.left)
-    invert_tree_rec(root.right)
+    invert_tree_DFS_rec(root.left)
+    invert_tree_DFS_rec(root.right)
     root.left, root.right = root.right, root.left
 
     return root
 
 
-invert_tree_rec(root)
+invert_tree_DFS_rec(root)
+
+
+# TC: O(n)
+# SC: O(n)
+def invertTree_BFS(root):
+    """Breadth First Search - Inlevel Traverse"""
+    queue = deque()
+
+    if root:
+        queue.append(root)
+
+    while len(queue) > 0:
+        for _ in range(len(queue)):
+            curr_root = queue.popleft()
+            curr_root.left, curr_root.right = curr_root.right, curr_root.left
+
+            if curr_root.left:
+                queue.append(curr_root.left)
+
+            if curr_root.right:
+                queue.append(curr_root.right)
+
+    return root
