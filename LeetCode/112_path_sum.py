@@ -25,6 +25,8 @@ root.right = node4
 #   1  3
 
 
+# TC: O(n)
+# SC: O(n)
 def hasPathSum(root, targetSum):
     if not root:
         return False
