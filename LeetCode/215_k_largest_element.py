@@ -1,3 +1,6 @@
+import heapq
+
+
 nums = [3, 2, 1, 5, 6, 4]
 k = 3
 k = len(nums) - k
@@ -35,3 +38,20 @@ def partition(nums, s, e, pivot):
 
 
 k_largest(nums, s=0, e=len(nums) - 1)
+
+
+# TC: O(n log k). O(n) - goes through each "number", log k - pushing/popping
+# SC: O(k) - stores at most  k  elements
+def findKthLargest_min_heap(nums, k):
+    heap = []
+    for num in nums:
+        heapq.heappush(heap, num)
+        if len(heap) > k:
+            heapq.heappop(heap)
+
+    return heap[0]
+
+
+nums = [3, 2, 1, 5, 6, 4]
+k = 3
+findKthLargest_min_heap(nums, k)
