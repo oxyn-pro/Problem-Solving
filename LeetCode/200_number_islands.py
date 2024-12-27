@@ -41,7 +41,9 @@ def numIslands_bfs(grid):
 
     neighbors = [[-1, 0], [1, 0], [0, -1], [0, 1]]
 
-    def bfs():
+    def bfs(r, c):
+        queue.append((r, c))
+
         while queue:
             r, c = queue.popleft()
 
@@ -59,8 +61,7 @@ def numIslands_bfs(grid):
         for c in range(COLS):
             if grid[r][c] == "1":
                 count += 1
-                queue.append((r, c))
-                bfs()
+                bfs(r, c)
 
     return count
 
