@@ -1,41 +1,39 @@
-# TC: O(n * m)
-# SC: O(n * m)
-def numIslands(grid):
-    """I implemented it with allocating space for the "visit" hashset"""
+from collections import deque
+
+
+# TC: O(n^2)
+# SC: O(n^2)
+def shortestPathBinaryMatrix(grid) -> int:
     ROWS, COLS = len(grid), len(grid[0])
+    queue = deque()
     visit = set()
+    neighbors = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, -1], [1, -1], [-1, 1], [1, 1]]
 
-    def dfs(r, c, visit):
-        if (
-            min(r, c) < 0
-            or r == ROWS
-            or c == COLS
-            or (r, c) in visit
-            or grid[r][c] == "0"
-        ):
-            return
+    queue.append((0, 0))
+    visit.add((0, 0))
+    length = 1
 
-        visit.add((r, c))
+    if grid[0][0] == 1:
+        return -1
 
-        dfs(r - 1, c, visit)
-        dfs(r + 1, c, visit)
-        dfs(r, c - 1, visit)
-        dfs(r, c + 1, visit)
+    while queue:
+        for _ in range(len(queue)):
+            r, c = queue.popleft()
 
-    count = 0
-    for r in range(ROWS):
-        for c in range(COLS):
-            if grid[r][c] == "1" and not (r, c) in visit:
-                count += 1
-                dfs(r, c, visit)
+            if r == ROWS - 1 and c == COLS - 1:
+                return length
 
-    return count
+            for dr, dc in neighbors:
+                if (
+                    min(r + dr, c + dc) < 0
+                    or r + dr == ROWS
+                    or c + dc == COLS
+                    or (r + dr, c + dc) in visit
+                    or grid[r + dr][c + dc] == 1
+                ):
+                    continue
+                queue.append((r + dr, c + dc))
+                visit.add((r + dr, c + dc))
+        length += 1
 
-
-grid = [
-    ["1", "1", "1", "1", "0"],
-    ["1", "1", "0", "1", "0"],
-    ["1", "1", "0", "0", "0"],
-    ["0", "0", "0", "0", "0"],
-]
-numIslands(grid)
+    return -1
