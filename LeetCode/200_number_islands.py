@@ -36,6 +36,7 @@ def numIslands(grid):
 
 
 def numIslands_bfs(grid):
+    """I implemented it without allocating space for the "visit" hashset"""
     ROWS, COLS = len(grid), len(grid[0])
     queue = deque()
 
