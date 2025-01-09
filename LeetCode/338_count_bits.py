@@ -34,4 +34,4 @@ def countBits_dp(n):
     return dp
 
 
-countBits_dp(5)
+countBits_dp(n)
