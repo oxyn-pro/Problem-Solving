@@ -11,7 +11,7 @@ def groupAnagrams(strs):
         count = [0] * 26
 
         for c in s:
-            count[97 - ord(c)] += 1
+            count[ord(c) - 97] += 1
 
         count = tuple(count)
 
